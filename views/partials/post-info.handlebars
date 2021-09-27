@@ -1,9 +1,10 @@
 <article class="post">
     <div class="title">
-        <h3>{{blog_title}}</h3>
-
+        <a href="post/{{id}}">
+        <h3> {{blog_title}} <span> Posted by {{user.username}} on {{format_date created_at}} </span> </h3>
+        <p>{{blog_text}}</p>
+        </a>
     </div>
     <div class="meta">
-        <a href="/post/{{id}}"> {{comments.length}} {{format_plural "comment" comments.length}} </a>
     </div>
 </article>

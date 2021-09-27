@@ -9,6 +9,7 @@ router.get('/', (req,res) => {
         attributes: [
             'id',
             'blog_title',
+            'blog_text',
             'created_at'
         ],
         include: {
@@ -19,7 +20,9 @@ router.get('/', (req,res) => {
     .then( dbPostData => {
         //pass single object into homepage template
         const posts = dbPostData.map(post => post.get({ plain: true }));
-        res.render('homepage', posts);
+        res.render('homepage', {
+            posts
+        });
     })
     .catch( err => {
         res.status(500).json(err);
