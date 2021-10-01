@@ -6,7 +6,6 @@ const withAuth = require('../../utils/auth');
 
 
 router.get('/', (req, res) => {
-    console.log('====================');
     Post.findAll({
         attributes: [
             'id',
@@ -84,6 +83,50 @@ router.post('/', withAuth, (req,res) => {
     })
         .then(dbPostData => res.json(dbPostData))
         .catch( err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.put('/:id', withAuth, (req,res) => {
+    Post.update(
+        {
+            blog_title: req.body.blog_title,
+            blog_text: req.body.blog_text
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+        .then(dbPostData => {
+            if(!dbPostData) {
+                res.status(404).json( {message: 'No blog found with this id'});
+                return;
+            }
+            res.json(dbPostData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.delete('/:id', withAuth, (req,res) => {
+    Post.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbPostData => {
+            if(!dbPostData) {
+                res.status(404).json({ message: 'No blog found with this id'});
+                return;
+            }
+            res.json(dbPostData);
+        })
+        .catch(err => {
             console.log(err);
             res.status(500).json(err);
         });
