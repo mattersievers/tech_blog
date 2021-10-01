@@ -1,7 +1,7 @@
 {{> post-info post}}
 
 {{#if post.comments.length}}
-<h3>Comments</h3>
+<h3>{{format_plural "Comment" post.comments.length}}</h3>
 {{> comments post.comments}}
 {{/if}}
 
@@ -17,4 +17,5 @@
 </form>
 
 <script src="/javascript/comment.js"></script>
-{{/if}}    
+{{/if}}   
+<div>Outside: {{post.comments.session_id}}</div>
