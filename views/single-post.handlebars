@@ -1,5 +1,10 @@
 {{> post-info post}}
 
+{{#if post.comments.length}}
+<h3>Comments</h3>
+{{> comments post.comments}}
+{{/if}}
+
 {{#if loggedIn}}
 <form class="comment-form">
     <div>
@@ -10,10 +15,6 @@
         <button type= "submit">add comment</button>
     </div>
 </form>
-{{/if}}
 
-{{> comments post.comments}}
-
-{{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
-{{/if}}
+{{/if}}    
