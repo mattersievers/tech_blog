@@ -4,6 +4,7 @@
         "JAWSDB",
         "resave",
         "signup",
-        "UPSERT"
+        "UPSERT",
+        "upvote"
     ]
 }
