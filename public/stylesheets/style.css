@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 * {
     box-sizing: border-box;
   }
@@ -7,22 +9,23 @@
     padding: 0;
     margin: 0;
     font-family: sans-serif;
-    color: #333;
+    color: rgb(187, 248, 157);
+    background-color: rgb(18, 11, 61);
   }
   
   a {
     text-decoration: none;
-    color: #225ca3;
+    color: #2da322;
     font-weight: bold;
     transition: color .1s;
   }
   
   a:hover {
-    color: #3486eb;
+    color: #baeb34;
   }
   
   button {
-    background-color: #225ca3;
+    background-color: #2da322;
     border: 0;
     padding: 1%;
     color: white;
@@ -33,7 +36,7 @@
   }
   
   button:hover {
-    background-color: #3486eb;
+    background-color: #baeb34;
   }
   
   .post-list {
@@ -49,7 +52,7 @@
   
   textarea:focus, input:focus {
     outline: none;
-    border: 1px solid #3486eb;
+    border: 1px solid #baeb34;
   }
   
   textarea {
@@ -80,12 +83,23 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 1%;
+    font-family: 'VT323', monospace;
   }
   
   header h1 {
-    font-size: 1em;
+    padding: 10px;
+    font-size: 4em;
+    border: 4px dotted #2da322;
+    border-bottom-right-radius: 25px;
   }
   
+  nav a {
+    padding: 10px;
+    border: 4px dotted #2da322;
+    font-size: 2em;
+    border-top-left-radius: 25px;
+  }
+
   main {
     flex: 1;
     padding: 2% 4%;
@@ -97,16 +111,20 @@
     padding: 0;
     cursor: pointer;
     text-decoration: none;
-    color: #225ca3;
-    font-size: 100%;
+    color: #2da322;
+    font-size: 200%;
     font-weight: bold;
     transition: color .1s;
     margin-left: 16px;
+    font-family: 'VT323', monospace;
+    padding: 10px;
+    border: 4px dotted #2da322;
+    border-bottom-right-radius: 25px;
   }
   
   .btn-no-style:hover {
     background: none;
-    color: #3486eb;
+    color: #baeb34;
   }
   
   .delete-post-btn {
@@ -125,23 +143,14 @@
   .post .title span {
     font-style: italic;
     font-size: 90%;
-    color: #7d7d7d;
+    color: #cace01;
   }
   
   .edit-link {
     display: block;
     margin: -1.5% 0 2% 0;
   }
-  
-  .upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
-  }
-  
-  .upvote-btn:hover {
-    background-color: #1f9c13;
-  }
-  
+    
   .comment-form {
     margin-bottom: 5%;
   }
@@ -152,7 +161,7 @@
   }
   
   .comment:nth-child(odd) {
-    background-color: #fff5eb;
+    background-color: #082710;
   }
   
   .comment .meta {
