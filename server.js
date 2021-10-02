@@ -13,6 +13,7 @@ const sequelize = require('./config/connection');
 const { options } = require('./models/Post');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+app.use(cookieParser());
 const sess = {
   secret: process.env.DB_SECRET,
   cookie: {maxAge: 300000},
