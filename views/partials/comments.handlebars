@@ -3,19 +3,19 @@
     <section class="comment">
         <div class="meta">
             {{user.username}} on {{format_date created_at}}
-            {{user_id}} and {{session_id}}
         </div>
         <div class="text">
             {{comment_text}}
         </div>
+
+        {{#when user_id ../session_id}}
         <div>
             <button>Edit</button> 
             <button>Delete</button>
         </div>
+       {{/when}}
     </section>
     {{/each}}
 </div>
 
-<div>
-    Here: {{comments.session_id}} and {{#if loggedIn}} wah{{/if}}
-</div> 
+<script src="/javascript/delete-comment"></script>

@@ -10,6 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sequelize = require('./config/connection');
+const { options } = require('./models/Post');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
@@ -24,7 +25,16 @@ const sess = {
 };
 
 app.use(session(sess));
+//creates helpers
 const hbs = exphbs.create({helpers});
+//
+//register new handlebar function
+hbs.handlebars.registerHelper("when", function(num1, num2, options) {
+  if(num1 === num2){
+    return options.fn(this);
+  }
+  return options.inverse(this);
+})
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
