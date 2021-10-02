@@ -1,6 +1,3 @@
-function getId() {
-    return ;
-}
 
 const post_id = window.location.toString().split('/')[
     window.location.toString().split('/').length -1
@@ -8,11 +5,9 @@ const post_id = window.location.toString().split('/')[
 
 async function deleteFormHandler(event) {
     event.preventDefault();
-    console.log(event);
-    const comment_id = await getId();
-    alert(comment_id);
+    console.log('ok');
 
-    const response = await fetch(`/api/comments/${comment_id}`, {
+    const response = await fetch(`/api/comments/${this.id}`, {
         method: 'DELETE'
     });
 
@@ -24,8 +19,8 @@ async function deleteFormHandler(event) {
     }
 }
   
-let buttons = document.querySelectorAll('.delete-comment-btn')
+let buttons = document.querySelectorAll('.delete-comment-btn');
 
-buttons.forEach((btn) => {
-  btn.addEventListener("click", deleteFormHandler);
-});
+buttons.forEach(btn =>{
+    btn.addEventListener('click',deleteFormHandler);
+})
