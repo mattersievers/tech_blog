@@ -39,6 +39,34 @@ router.get('/', withAuth, (req,res) => {
     });
 });
 
+router.get('/edit/comment/:id', withAuth, (req,res) => {
+    Comment.findOne({
+        where: {
+            id: req.params.id
+        },
+        attributes: [
+            'id',
+            'comment_text',
+            'user_id',
+            'post_id',
+            'created_at'
+        ], 
+        include:
+            {
+                model: User,
+                attributes: ['username']
+            }
+    })
+    .then(dbCommentData => {
+        const comment = dbCommentData.get({ plain: true });
+
+        res.render('edit-comment', {  
+            comment, 
+            loggedIn: true
+        });
+    })
+})
+
 router.get('/edit/:id', withAuth, (req,res) => {
     Post.findOne({
         where: {

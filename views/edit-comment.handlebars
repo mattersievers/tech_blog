@@ -1,0 +1,17 @@
+<article>
+  <h2>
+    Edit Your Comment
+  </h2>
+  <form class="edit-comment-form">
+    <div>
+        <label>Comment</label>
+        <textarea type="text" name="comment-text">{{comment.comment_text}}</textarea>
+    </div>
+    <div>
+      Created on {{format_date comment.created_at}}
+    </div>
+    <button type="submit" id="{{comment.post_id}}" class="edit-submit-btn">Save comment</button>
+   </form>
+</article>
+
+<script src="/javascript/edit-comment.js"></script>

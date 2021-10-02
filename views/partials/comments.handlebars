@@ -10,12 +10,12 @@
 
         {{#when user_id ../session_id}}
         <div>
-            <button>Edit</button> 
-            <button>Delete</button>
+            <a href="/dashboard/edit/comment/{{id}}"><button>Edit</button></a> 
+            <button id="{{id}}" class="delete-comment-btn">Delete</button>
         </div>
        {{/when}}
     </section>
     {{/each}}
 </div>
 
-<script src="/javascript/delete-comment"></script>
+<script src="/javascript/delete-comment.js"></script>
