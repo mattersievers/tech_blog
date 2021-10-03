@@ -96,7 +96,8 @@ router.put('/:id', withAuth, (req,res) => {
         },
         {
             where: {
-                id: req.params.id
+                id: req.params.id,
+                user_id: req.session.user_id 
             }
         }
     )
@@ -105,7 +106,9 @@ router.put('/:id', withAuth, (req,res) => {
                 res.status(404).json( {message: 'No blog found with this id'});
                 return;
             }
+
             res.json(dbPostData);
+
         })
         .catch(err => {
             console.log(err);
@@ -116,7 +119,8 @@ router.put('/:id', withAuth, (req,res) => {
 router.delete('/:id', withAuth, (req,res) => {
     Post.destroy({
         where: {
-            id: req.params.id
+            id: req.params.id,
+            user_id: req.session.user_id
         }
     })
         .then(dbPostData => {

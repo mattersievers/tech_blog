@@ -21,7 +21,7 @@
         {{#each posts as |post|}}
         <li>
             {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit blog</a>
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link"><button>Edit blog</button></a>
         </li>
         {{/each}}
     </ol>

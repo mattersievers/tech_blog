@@ -33,7 +33,8 @@ router.put('/:id', withAuth, (req,res) => {
     },
     {
         where: {
-            id: req.params.id
+            id: req.params.id,
+            user_id: req.session.user_id
         }
     })
         .then(dbPostData => {
@@ -52,7 +53,8 @@ router.put('/:id', withAuth, (req,res) => {
 router.delete('/:id', withAuth, (req,res) => {
     Comment.destroy({
         where: {
-            id: req.params.id
+            id: req.params.id,
+            user_id: req.session.user_id
         }
     })
         .then(dbPostData => {
