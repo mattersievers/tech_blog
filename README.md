@@ -15,6 +15,8 @@
   ## Description
   Tech Blog generates a server that allows users to create accounts where they can post, edit, and delete blogs from the dashboard. Users can interact with blogs by posting, editing, or deleting comments on the blog.
 
+  ![homescreen](public/images/tech-blog-homepage.jpg)
+
   ## Install
   To generate the server, use the commands:    
   `npm install express-handlebars`   
