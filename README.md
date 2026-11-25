@@ -17,7 +17,7 @@
 
   ![homescreen](public/images/tech-blog-homepage.jpg)
 
-  [Click here for the deployed website!](https://sleepy-earth-77165.herokuapp.com/)
+  [Click here for the deployed website!](https://budget-tracker-v1-5baa2927d7f5.herokuapp.com/)
 
   ## Install
   To generate the server, use the commands:    
